@@ -14,7 +14,7 @@ A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need y
 LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental data, such as a trailing P/E Ratio, directly into your environment. Check [LSEG Snapshot](./LSEGSnapshot) for more information. You will need your own API key.
 
 4. Data & Logic
-Database Schema: A sample schema for organizing your data for high-speed querying.
+Database Schema: A sample schema for organizing your data for high-speed querying.[Schema](./Schema.md).
 
 5. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. [Dummy Prompt](./DummyPrompt.md).
 
