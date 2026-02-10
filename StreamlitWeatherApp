@@ -1,0 +1,68 @@
+import streamlit as st
+import requests
+import pandas as pd
+from datetime import datetime
+
+# 1. PAGE CONFIGURATION
+# This sets the browser tab title and the icon.
+st.set_page_config(page_title="Sydney Weather Tool", page_icon="☀️")
+
+# 2. THE HEADER
+# Standard markdown used to create an elegant title for your local server.
+st.title("🏙️ Sydney Research Fortress: Weather Tool")
+st.markdown("---")
+
+# 3. DATA ACQUISITION (THE "WAITER")
+# In your architecture, this function acts as the 'Digital Waiter' fetching data.
+def get_sydney_weather():
+    # Coordinates for Sydney, Australia
+    url = "https://api.open-meteo.com/v1/forecast?latitude=-33.8678&longitude=151.2073&current_weather=True"
+    
+    try:
+        response = requests.get(url)
+        data = response.json()
+        return data['current_weather']
+    except Exception as e:
+        st.error(f"Failed to fetch data: {e}")
+        return None
+
+# 4. APP LOGIC
+# Adding a button allows the user to trigger the 'Curiosity' industrialization.
+if st.button('Update Sydney Forecast'):
+    weather = get_sydney_weather()
+    
+    if weather:
+        # 5. METRIC DISPLAY
+        # Streamlit's 'metric' component is perfect for financial ratios or weather.
+        col1, col2 = st.columns(2)
+        col1.metric("Temperature", f"{weather['temperature']} °C")
+        col2.metric("Wind Speed", f"{weather['windspeed']} km/h")
+        
+        # 6. TIMESTAMPING
+        # Always log when data was retrieved to maintain a 'Probabilistic Mindset'.
+        st.caption(f"Last updated: {datetime.now().strftime('%H:%M:%S')}")
+    else:
+        st.warning("Ensure you are connected to the internet.")
+
+# 7. SIDEBAR GUIDANCE
+# Use the sidebar for instructions or 'Guardrails' for the user.
+st.sidebar.header("Fortress Instructions")
+st.sidebar.info("""
+This tool proves your Streamlit server is active. 
+If you can see this, your 'Front-End' is successfully 
+connected to your 'Python Logic'.
+""")
+# How to Launch Your Application
+# To see this in action, follow these steps in your terminal :
+# Activate your environment:
+# Bash
+# conda activate fortress
+# Navigate to the folder containing your file:
+# Bash
+#cd path/to/your/folder
+#Run the Streamlit command:
+#Bash
+#streamlit run weather_app.py
+#Why This Matters for Your "Fortress"
+#Decoupling: Notice how the get_sydney_weather function (the logic) is separate from st.title (the UI). This is a core tenet of the Architecture of Information .
+#The Local Server: By running this, you are effectively hosting your own private research website on your own silicon—transitioning from a "renter" to a "sovereign owner" of your tools .
