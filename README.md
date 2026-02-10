@@ -1,11 +1,11 @@
 This repository provides a modular toolkit to help you build your own "Fortress" research environment. Each component is intentionally stripped back to its core logic to serve as a readable guidepost for your own development.
 
-1. Web Applications & UI
+1. Environment & Setup
+Conda/Anaconda Guide: Step-by-step instructions for creating isolated Python virtual environments to prevent library conflicts.
+
+2. Web Applications & UI
 Sydney Weather App: A simple Streamlit application to get you up and running with your very own localhost server.
 A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need your own API Keys)
-
-2. Environment & Setup
-Conda/Anaconda Guide: Step-by-step instructions for creating isolated Python virtual environments to prevent library conflicts.
 
 3. Library Management: A requirements.txt file and guide for installing essential financial and AI libraries (Pandas, Streamlit, OpenAI, etc.).
 
