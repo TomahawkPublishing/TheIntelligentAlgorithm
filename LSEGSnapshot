@@ -1,0 +1,108 @@
+import lseg.data as ld
+import streamlit as st
+import pandas as pd
+
+# 1. PAGE CONFIGURATION
+st.set_page_config(page_title="LSEG Fundamental Snapshot", page_icon="📊", layout="wide")
+
+# 2. KEY LOADING
+def load_lseg_key(file_path):
+    try:
+        with open(file_path, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        st.error(f"LSEG Key file not found: {file_path}")
+        return None
+
+APP_KEY = load_lseg_key("LSEGAPIKey.txt")
+
+# 3. AUTHENTICATION & DATA RETRIEVAL
+if APP_KEY:
+    try:
+        ld.open_session(app_key=APP_KEY)
+        
+        st.title("📊 LSEG Fundamental Snapshot")
+        st.markdown("---")
+        
+        symbol = st.text_input("Enter Ticker/RIC Symbol (e.g., MSFT.O, NVDA.O, AAPL.O):", value="MSFT.O")
+        
+        # Field list for the snapshot
+        fund_fields = [
+            "TR.CommonName",
+            "TR.PE", 
+            "TR.EVToEBITDA", 
+            "TR.DividendYield", 
+            "TR.CompanyMarketCap(Curn=USD)", 
+            "TR.PriceToBook", 
+            "TR.FwdPE"
+        ]
+        
+        if st.button("Generate Snapshot"):
+            with st.spinner(f"Querying LSEG for {symbol}..."):
+                # Retrieve data into a single variable
+                data = ld.get_data(universe=[symbol], fields=fund_fields)
+                
+                if data is not None and not data.empty:
+                    # 4. DYNAMIC HEADING
+                    company_name = data.iloc[0]["Company Common Name"]
+                    st.header(f"🏢 {company_name}")
+                    
+                    # 5. DATA CLEANING & SCALING
+                    # Transpose data to vertical view
+                    display_df = data.drop(columns=['Instrument', 'Company Common Name']).T
+                    display_df.columns = ["Value"]
+                    display_df.index.name = "Metric"
+                    
+                    # Ensure numeric conversion
+                    display_df["Value"] = pd.to_numeric(display_df["Value"], errors='coerce')
+                    
+                    # SCALE MARKET CAP: Convert raw USD to Billions
+                    # We look for the row containing 'Market Cap'
+                    mkt_cap_idx = [i for i in display_df.index if 'Market Cap' in i]
+                    
+                    if mkt_cap_idx:
+                        # Divide by 1 billion
+                        display_df.loc[mkt_cap_idx, "Value"] = display_df.loc[mkt_cap_idx, "Value"] / 1e9
+                        
+                        # RENAME HEADING: Update index label to "(USD bn)"
+                        new_index = []
+                        for label in display_df.index:
+                            if "Market Cap" in label:
+                                # Replaces the entire label for clarity
+                                new_index.append("Company Market Cap (USD bn)")
+                            else:
+                                new_index.append(label)
+                        display_df.index = new_index
+
+                    # 6. FINAL FORMATTING (Strict 1 Decimal Point)
+                    # We use a lambda function to force "15.0" instead of just "15"
+                    display_df["Value"] = display_df["Value"].apply(lambda x: f"{x:.1f}")
+                    
+                    # 7. TABLE DISPLAY
+                    st.table(display_df)
+                    st.success(f"Snapshot complete for {symbol}. Market Cap scaled to Billions.")
+                else:
+                    st.warning(f"No data returned for {symbol}.")
+                    
+    except Exception as e:
+        st.error(f"LSEG Session Error: {e}")
+    finally:
+        ld.close_session()
+else:
+    st.info("Please ensure LSEGAPIKey.txt exists in this directory.")
+
+
+# ---------------------------------------------------------
+# INSTRUCTIONS & GUIDELINES FOR THE USER
+# ---------------------------------------------------------
+# 1. FIELD DEFINITIONS:
+#    - TR.PE: Standard Price/Earnings ratio.
+#    - TR.EVToEBITDA: Enterprise Value to EBITDA.
+#    - TR.DividendYield: Indicated dividend yield.
+#    - TR.CompanyMarketCap: Market capitalization converted to USD.
+#    - TR.PriceToBook: Price to Book value.
+#    - TR.FwdPE: Forward P/E based on analyst estimates.
+# 2. LAYOUT: The code uses 'layout="wide"' to provide more horizontal room.
+# 3. TABLE TRANSPOSE: We use '.T' to turn the row of data into a vertical table.
+# 4. ERROR HANDLING: The code checks if 'data' is None to prevent crashes on bad tickers.
+# ---------------------------------------------------------
