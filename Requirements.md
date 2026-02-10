@@ -1,10 +1,9 @@
 **The Requirements File** 
 
-Note: The libraries listed below are recommendations based on the core architecture of the "Fortress" environment.
+Note: The libraries listed below are recommendations of those we found useful in core architecture. 
 
-Copy and save the following content into a file named requirements.txt in your repository’s root directory:
+Copy and save the library names as a long list in Notepad and save the file as "requirements.txt" in your repository’s root directory:
 
-Plaintext
 **Core UI & Visualization**
 
 streamlit 
