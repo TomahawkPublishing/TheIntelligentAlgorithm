@@ -14,7 +14,7 @@ LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental d
 4. Data & Logic
 Database Schema: A sample schema for organizing your data for high-speed querying.
 
-5. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. 
+5. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. [Requirements](./DummyPrompt.md).
 
 ⚠️ Disclaimer & Usage
 For Educational Use Only The code provided here is a skeletal framework. It is intentionally basic and lacks the robust error-handling, encryption, and "fail-safes" required for a production-level institutional environment.
