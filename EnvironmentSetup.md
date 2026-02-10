@@ -1,17 +1,21 @@
-## 🏗️ 1. Environment & Setup: The Conda Guide
+🏗️ 1. Environment & Setup: The Conda Guide
+To ensure your research engine runs predictably, you must isolate your workspace. Think of a Virtual Environment as a sealed "clean room" where you define exactly which tools are on the shelves to prevent "Dependency Hell" and library conflicts .
++2
 
-To ensure your research engine runs predictably, you must **isolate your workspace**. [cite_start]Think of a **Virtual Environment** as a sealed "clean room" where you define exactly which tools are on the shelves to prevent "Dependency Hell" and library conflicts [cite: 817-819, 822, 1082].
+Step 1: Install your Distributor
+Before creating an environment, you need a distribution manager to act as the "landlord" of your building .
++2
 
-### **Step 1: Install your Distributor**
-[cite_start]Before creating an environment, you need a distribution manager to act as the "landlord" of your building [cite: 779-780, 826].
+Anaconda: The full-featured "landlord." It comes pre-packaged with an extensive library of data science tools .
++1
 
-* **Anaconda:** The full-featured "landlord." [cite_start]It comes pre-packaged with an extensive library of data science tools [cite: 781-783, 826].
-* [cite_start]**Miniforge/Miniconda:** A lighter, "bare-bones" version for those looking to save disk space and system resources [cite: 784-785].
 
-### **Step 2: Create the "Workshop"**
-Open your terminal (or Anaconda Prompt) to create your isolated room. [cite_start]We recommend using **Python 3.11** for maximum compatibility with institutional financial APIs and modern LLM libraries [cite: 820-823].
+Miniforge/Miniconda: A lighter, "bare-bones" version for those looking to save disk space and system resources .
 
-```bash
+Step 2: Create the "Workshop"
+Open your terminal (or Anaconda Prompt) to create your isolated room. We recommend using Python 3.11 for maximum compatibility with institutional financial APIs and modern LLM libraries .
+
+Bash
 # Create an environment named 'fortress'
 conda create -n fortress python=3.11
 Step 3: Activate the Environment
@@ -21,7 +25,7 @@ Bash
 conda activate fortress
 Step 4: Install the Essentials
 Once inside, use the provided requirements.txt to install the complete "toolbox" required for this repository in one go .
-
++1
 
 Bash
 pip install -r requirements.txt
