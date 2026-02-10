@@ -2,11 +2,11 @@ This repository provides a modular toolkit to help you build your own "Fortress"
 
 1. Environment & Setup
 Conda/Anaconda Guide: Step-by-step instructions for creating isolated Python virtual environments to prevent library conflicts. For detailed environment instructions, see our [Setup Guide](./EnvironmentSetup.md)
-Library Management: A requirements.txt file and guide for installing essential financial and AI libraries (Pandas, Streamlit, OpenAI, etc.) [Requirements](./Requirements.md)
+Library Management: A requirements.txt file and guide for installing essential financial and AI libraries (Pandas, Streamlit, OpenAI, etc.) [Requirements](./Requirements.md).
 
 2. Web Applications & UI
 Sydney Weather App: A simple Streamlit application to get you up and running with your very own localhost server [Weather](./StreamlitWeatherApp).
-A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need your own API Keys) [Chatbot](./StreamlitAIChatbot)
+A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need your own API Keys) [Chatbot](./StreamlitAIChatbot).
 
 3. API Integrations & Connectivity
 LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental data, such as a trailing P/E Ratio, directly into your environment.
