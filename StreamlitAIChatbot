@@ -59,34 +59,27 @@ if user_query:
 st.sidebar.header("Fortress Security")
 st.sidebar.warning("API keys are loaded locally. Do not commit keys to GitHub.")
 
-#Instructions for Setup
+#**Instructions for Setup** 
+
 # To ensure this app functions as intended, follow these configuration steps:
-
 # Prepare the Key Files:
-
 # Create a file named OpenAI_APIKey.txt and paste your OpenAI key inside.
-
 # Create a file named TavilyAPIKey.txt and paste your Tavily key inside.
-
 # Note: Ensure there are no extra spaces or line breaks.
-
 # Activate and Run: Open your terminal, activate your environment, and launch the app.
 
 # Bash
 # conda activate fortress
 # streamlit run ai_chatbot.py
+
 # Why This Matters
 # Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Sony Corp's latest quarterly earnings or recent product announcements, before formulating a response.
-
 # The "Private Fortress" Logic: This script runs on your localhost. While the query goes to the cloud, the orchestration and the logic are managed on your own machine .Instructions for Setup
 # To ensure this app functions as intended, follow these configuration steps:
 
 # Prepare the Key Files:
-
 # Create a file named OpenAI_APIKey.txt and paste your OpenAI key inside.
-
 # Create a file named TavilyAPIKey.txt and paste your Tavily key inside.
-
 # Note: Ensure there are no extra spaces or line breaks.
 
 # Activate and Run: Open your terminal, activate your environment, and launch the app.
@@ -96,5 +89,4 @@ st.sidebar.warning("API keys are loaded locally. Do not commit keys to GitHub.")
 # streamlit run ai_chatbot.py
 # Why This Matters
 # Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Sony Corp's latest quarterly earnings or recent product announcements, before formulating a response.
-
 # The "Private Fortress" Logic: This script runs on your localhost. While the query goes to the cloud, the orchestration and the logic are managed on your own machine.
