@@ -1,52 +1,65 @@
-### 🗄️ Data & Logic: Sample Database Schema
+## 🗄️ Data & Logic: Sample Database Schema
 
-This schema is designed for an SQLite or PostgreSQL environment. It follows the "Architecture of Information" by separating metadata from volatile financial metrics.
+This schema is designed for a relational research environment (e.g., **SQLite** or **PostgreSQL**). By using **RICs (Reuters Instrument Codes)** or **SEDOLs** as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic.
 
-**1. The Master Registry**
+---
 
-This table acts as the "Source of Truth" for every entity in your universe.
+### **1. The Master Registry**
+*The "Source of Truth" for your investment universe metadata.*
 
-Column	Type	Description
-RIC	PRIMARY KEY	The unique identifier (e.g., SONY.T)
-SEDOL	VARCHAR	Secondary unique identifier for global cross-referencing
-Company_Name	VARCHAR	The formal entity name
-Sector	VARCHAR	Industry classification
-Currency	VARCHAR	The reporting currency of the entity
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `RIC` | **PRIMARY KEY** | Unique identifier (e.g., `SONY.T`, `MSFT.O`) |
+| `SEDOL` | VARCHAR | Global identifier for cross-border reconciliation |
+| `Company_Name` | VARCHAR | Formal legal entity name |
+| `Sector` | VARCHAR | Industry classification (GICS or internal) |
+| `Currency` | VARCHAR | Reporting currency (e.g., JPY, USD) |
 
-**2. Fundamentals Table (fact_fundamentals)**
-Captures the "Snapshot" metrics that drive your initial screening.
+---
 
-Column	Type	Description
-RIC	FOREIGN KEY	Links to the Master Registry
-Date	DATE	The date the snapshot was captured
-PE_Ratio	FLOAT	Price-to-Earnings (1 dp)
-PB_Ratio	FLOAT	Price-to-Book (1 dp)
-EV_EBITDA	FLOAT	Enterprise Value to EBITDA
-Div_Yield	FLOAT	Indicated Dividend Yield
+### **2. Fundamentals Table (`fact_fundamentals`)**
+*Stores the high-level valuation snapshots used for screening.*
 
-**3. Income Statement Table (fact_income_statement)**
-Stores time-series data for historical analysis.
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `RIC` | **FOREIGN KEY** | Links to the Master Registry |
+| `Date` | DATE | Snapshot timestamp |
+| `PE_Ratio` | FLOAT | Price-to-Earnings (1 dp) |
+| `PB_Ratio` | FLOAT | Price-to-Book (1 dp) |
+| `EV_EBITDA` | FLOAT | Enterprise Value to EBITDA |
+| `Div_Yield` | FLOAT | Indicated Dividend Yield |
 
-Column	Type	Description
-RIC	FOREIGN KEY	Links to the Master Registry
-Fiscal_Year	INTEGER	The year of the report
-Total_Revenue	BIGINT	Top-line revenue in local currency
-Net_Income	BIGINT	Bottom-line profit
-EBIT	BIGINT	Earnings Before Interest and Taxes
+---
 
-**4. Cash Flow Table (fact_cash_flow)**
-Essential for your "Quality of Earnings" checks.
+### **3. Income Statement Table (`fact_income_statement`)**
+*Time-series data for historical profitability analysis.*
 
-Column	Type	Description
-RIC	FOREIGN KEY	Links to the Master Registry
-Fiscal_Year	INTEGER	The year of the report
-Operating_CF	BIGINT	Cash generated from core operations
-CapEx	BIGINT	Capital Expenditures
-Free_Cash_Flow	BIGINT	Operating CF minus CapEx
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `RIC` | **FOREIGN KEY** | Links to the Master Registry |
+| `Fiscal_Year` | INTEGER | Year of the reporting period |
+| `Total_Revenue` | BIGINT | Top-line revenue in local currency |
+| `Net_Income` | BIGINT | Bottom-line profit |
+| `EBIT` | BIGINT | Earnings Before Interest and Taxes |
+
+---
+
+### **4. Cash Flow Table (`fact_cash_flow`)**
+*The "Truth Layer" for analyzing quality of earnings.*
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `RIC` | **FOREIGN KEY** | Links to the Master Registry |
+ `Fiscal_Year` | INTEGER | Year of the reporting period |
+| `Operating_CF` | BIGINT | Cash generated from core operations |
+| `CapEx` | BIGINT | Capital Expenditures |
+| `Free_Cash_Flow` | BIGINT | Operating Cash Flow minus CapEx |
+
+---
+
+### 📘 Implementation Notes
+* **Normalization:** By separating Income Statement and Cash Flow items into distinct tables, we prevent "Wide Table Syndrome," making it easier to add new line items in the future without breaking existing queries.
+* **Master Keys:** Always clean your `RIC` and `SEDOL` strings (strip whitespace) before insertion to ensure the relational joins function correctly.
 
 **📘 Strategic Guidelines for Database Management**
 The Power of the Foreign Key: By using the RIC across all tables, you can write a single SQL query to pull a company's P/E Ratio alongside its Free Cash Flow for the last five years instantly.
-
-Industrialization: In your book's framework, this schema allows you to move from "searching for data" to "querying for insight." You are no longer managing files; you are managing a structured library.
-
-Data Integrity: Always ensure your RIC or SEDOL strings are cleaned of whitespace. A SONY.T (with a space) will not match SONY.T (without a space), causing a "Ghost in the Machine" during your analysis.
