@@ -1,4 +1,6 @@
-This repository provides a modular toolkit to help you build your own "Fortress" research environment. Each component is intentionally stripped back to its core logic to serve as a readable guidepost for your own development.
+## The Intelligent Algorithm: Value Investing in the Age of Artificial Intelligence 
+
+This repository provides a modular toolkit to support the text of the book published in March 2026. The aim is to help you build your own "Fortress" research environment. Each component is intentionally stripped back to its core logic to serve as a readable guidepost for your own development. Buy the book here www.intelligentalgorithm.com.
 
 1. Environment & Setup
 Conda/Anaconda Guide: Step-by-step instructions for creating isolated Python virtual environments to prevent library conflicts. For detailed environment instructions, see our [Setup Guide](./EnvironmentSetup.md)
