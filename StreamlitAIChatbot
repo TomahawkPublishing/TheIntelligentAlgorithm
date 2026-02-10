@@ -1,0 +1,100 @@
+import streamlit as st
+from openai import OpenAI
+from tavily import TavilyClient
+import os
+
+# 1. PAGE CONFIGURATION
+st.set_page_config(page_title="Fortress AI Chatbot", page_icon="🤖")
+
+# 2. KEY LOADING
+def load_key(file_path):
+    try:
+        with open(file_path, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        st.error(f"Key file not found: {file_path}")
+        return None
+
+OPENAI_API_KEY = load_key("OpenAI_APIKey.txt")
+TAVILY_API_KEY = load_key("TavilyAPIKey.txt")
+
+# 3. CLIENT INITIALIZATION
+if OPENAI_API_KEY and TAVILY_API_KEY:
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    tavily = TavilyClient(api_key=TAVILY_API_KEY)
+else:
+    st.stop()
+
+# 4. THE INTERFACE
+st.title("🤖 Fortress Research Chatbot")
+st.info("Ask about markets, companies, or trends (e.g., 'What is the latest news on Sony Corp?')")
+
+# 5. INITIAL USER INPUT (TOP OF PAGE)
+user_query = st.text_input("What would you like to research?", key="initial_query")
+
+if user_query:
+    with st.spinner("Analyzing web data and reasoning..."):
+        # SEARCH AND REASONING LOGIC
+        search_result = tavily.search(query=user_query, search_depth="advanced")
+        context = str(search_result)
+
+        response = client.chat.completions.create(
+            model="gpt-5.1",
+            messages=[
+                {"role": "system", "content": "You are a professional financial analyst. Use the search context to answer with logic."},
+                {"role": "user", "content": f"Context: {context}\n\nQuery: {user_query}"}
+            ]
+        )
+
+        # 6. OUTPUT THE ANALYSIS
+        st.subheader("Analysis")
+        st.write(response.choices[0].message.content)
+        st.markdown("---")
+
+        # 7. THE FOLLOW-UP PROMPT (BOTTOM OF PAGE)
+        # This only appears after the code above has executed.
+        st.text_input("Anything else?", key="follow_up_query", placeholder="Ask a follow-up question here...")
+
+# 8. SIDEBAR
+st.sidebar.header("Fortress Security")
+st.sidebar.warning("API keys are loaded locally. Do not commit keys to GitHub.")
+
+#Instructions for Setup
+# To ensure this app functions as intended, follow these configuration steps:
+
+# Prepare the Key Files:
+
+# Create a file named OpenAI_APIKey.txt and paste your OpenAI key inside.
+
+# Create a file named TavilyAPIKey.txt and paste your Tavily key inside.
+
+# Note: Ensure there are no extra spaces or line breaks.
+
+# Activate and Run: Open your terminal, activate your environment, and launch the app.
+
+# Bash
+# conda activate fortress
+# streamlit run ai_chatbot.py
+# Why This Matters
+# Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Sony Corp's latest quarterly earnings or recent product announcements, before formulating a response.
+
+# The "Private Fortress" Logic: This script runs on your localhost. While the query goes to the cloud, the orchestration and the logic are managed on your own machine .Instructions for Setup
+# To ensure this app functions as intended, follow these configuration steps:
+
+# Prepare the Key Files:
+
+# Create a file named OpenAI_APIKey.txt and paste your OpenAI key inside.
+
+# Create a file named TavilyAPIKey.txt and paste your Tavily key inside.
+
+# Note: Ensure there are no extra spaces or line breaks.
+
+# Activate and Run: Open your terminal, activate your environment, and launch the app.
+
+# Bash
+# conda activate fortress
+# streamlit run ai_chatbot.py
+# Why This Matters
+# Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Sony Corp's latest quarterly earnings or recent product announcements, before formulating a response.
+
+# The "Private Fortress" Logic: This script runs on your localhost. While the query goes to the cloud, the orchestration and the logic are managed on your own machine.
