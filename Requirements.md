@@ -1,4 +1,4 @@
-**The Requirements File** 
+**📄 The Requirements File** 
 
 Note: The libraries listed below are recommendations of those we found useful in core architecture. 
 
