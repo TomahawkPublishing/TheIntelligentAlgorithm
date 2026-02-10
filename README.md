@@ -11,7 +11,7 @@ Sydney Weather App: A simple Streamlit application to get you up and running wit
 A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need your own API Keys) [Chatbot](./StreamlitAIChatbot).
 
 3. API Integrations & Connectivity
-LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental data, such as a trailing P/E Ratio, directly into your environment. Check [LSEG Snapshot](./LSEGSnapshot) for more information.
+LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental data, such as a trailing P/E Ratio, directly into your environment. Check [LSEG Snapshot](./LSEGSnapshot) for more information. You will need your own API key.
 
 4. Data & Logic
 Database Schema: A sample schema for organizing your data for high-speed querying.
