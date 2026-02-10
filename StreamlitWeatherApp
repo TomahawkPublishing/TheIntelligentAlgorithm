@@ -52,6 +52,9 @@ This tool proves your Streamlit server is active.
 If you can see this, your 'Front-End' is successfully 
 connected to your 'Python Logic'.
 """)
+
+
+#-----------------------------------------------------------------------------------------------------------
 # How to Launch Your Application
 # To see this in action, follow these steps in your terminal :
 # Activate your environment:
@@ -66,3 +69,4 @@ connected to your 'Python Logic'.
 #Why This Matters for Your "Fortress"
 #Decoupling: Notice how the get_sydney_weather function (the logic) is separate from st.title (the UI). This is a core tenet of the Architecture of Information .
 #The Local Server: By running this, you are effectively hosting your own private research website on your own silicon—transitioning from a "renter" to a "sovereign owner" of your tools .
+#-----------------------------------------------------------------------------------------------------------
