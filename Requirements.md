@@ -5,33 +5,39 @@ Note: The libraries listed below are recommendations based on the core architect
 Copy and save the following content into a file named requirements.txt in your repository’s root directory:
 
 Plaintext
-** Core UI & Visualization **
+**Core UI & Visualization**
+
 streamlit 
 plotly 
 matplotlib 
 kaleido
 
-** Data Engine & Storage **
+**Data Engine & Storage**
+
 pandas 
 numpy 
 sqlite3
 
-** Institutional Connectivity **
+**Institutional Connectivity**
+
 refinitiv-data 
 lseg.data
 
-** Intelligence & Search **
+**Intelligence & Search**
+
 openai 
 tavily-python 
 json_repair
 
-** Document Processing **
+**Document Processing**
+
 pypdf 
 pypdf2 
 python-docx 
 markdown
 
-** System & Security **
+**System & Security**
+
 python-dotenv 
 pycryptodome
 
