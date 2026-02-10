@@ -4,18 +4,18 @@ This repository provides a modular toolkit to help you build your own "Fortress"
 Sydney Weather App: A simple Streamlit application to get you up and running with your very own localhost server.
 A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need your own API Keys)
 
-3. Environment & Setup
+2. Environment & Setup
 Conda/Anaconda Guide: Step-by-step instructions for creating isolated Python virtual environments to prevent library conflicts.
 
-Library Management: A requirements.txt file and guide for installing essential financial and AI libraries (Pandas, Streamlit, OpenAI, etc.).
+3. Library Management: A requirements.txt file and guide for installing essential financial and AI libraries (Pandas, Streamlit, OpenAI, etc.).
 
-3. API Integrations & Connectivity
+4. API Integrations & Connectivity
 LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental data, such as a trailing P/E Ratio, directly into your environment.
 
-4. Data & Logic
+5. Data & Logic
 Database Schema: A sample schema for organizing your data for high-speed querying.
 
-5. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. 
+6. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. 
 
 ⚠️ Disclaimer & Usage
 For Educational Use Only The code provided here is a skeletal framework. It is intentionally basic and lacks the robust error-handling, encryption, and "fail-safes" required for a production-level institutional environment.
