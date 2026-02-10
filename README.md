@@ -15,8 +15,9 @@ LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental d
 
 4. Data & Logic
 Database Schema: A sample schema for organizing your data for high-speed querying. Find the basic guidelines [here](./Schema.md).
+In addition, there are some basic instructions for setting up an SQLite database using this schema and is some sample script showing how to retrieve data from it.  
 
-5. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. [Dummy Prompt](./DummyPrompt.md).
+6. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate "Constraint-based" prompt engineering. Tailor as you will. [Dummy Prompt](./DummyPrompt.md).
 
 ⚠️ Disclaimer & Usage
 For Educational Use Only The code provided here is a skeletal framework. It is intentionally basic and lacks the robust error-handling, encryption, and "fail-safes" required for a production-level institutional environment.
