@@ -1,0 +1,93 @@
+import sqlite3
+
+def initialize_fortress_db():
+    """
+    Creates the MasterData.db file and initializes the 
+    relational schema for institutional financial research.
+    """
+    try:
+        # Connect to SQLite (this creates the file if it doesn't exist)
+        conn = sqlite3.connect('MasterData.db')
+        cursor = conn.cursor()
+
+        # 1. CREATE MASTER REGISTRY
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS fact_registry (
+            RIC TEXT PRIMARY KEY,
+            SEDOL TEXT,
+            Company_Name TEXT,
+            Sector TEXT,
+            Currency TEXT
+        )
+        """)
+
+        # 2. CREATE FUNDAMENTALS TABLE
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS fact_fundamentals (
+            RIC TEXT,
+            Date TEXT,
+            PE_Ratio REAL,
+            PB_Ratio REAL,
+            EV_EBITDA REAL,
+            Div_Yield REAL,
+            FOREIGN KEY (RIC) REFERENCES fact_registry (RIC)
+        )
+        """)
+
+        # 3. CREATE INCOME STATEMENT TABLE
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS fact_income_statement (
+            RIC TEXT,
+            Fiscal_Year INTEGER,
+            Total_Revenue INTEGER,
+            Net_Income INTEGER,
+            EBIT INTEGER,
+            FOREIGN KEY (RIC) REFERENCES fact_registry (RIC)
+        )
+        """)
+
+        # 4. CREATE CASH FLOW TABLE
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS fact_cash_flow (
+            RIC TEXT,
+            Fiscal_Year INTEGER,
+            Operating_CF INTEGER,
+            CapEx INTEGER,
+            Free_Cash_Flow INTEGER,
+            FOREIGN KEY (RIC) REFERENCES fact_registry (RIC)
+        )
+        """)
+
+        conn.commit()
+        conn.close()
+        print("✅ MasterData.db initialized successfully.")
+
+    except sqlite3.Error as e:
+        print(f"❌ Error initializing database: {e}")
+
+if __name__ == "__main__":
+    initialize_fortress_db()
+
+# ---------------------------------------------------------
+# # IMPLEMENTATION NOTES & ARCHITECTURAL GUIDELINES
+# ---------------------------------------------------------
+# 1. SERVERLESS ARCHITECTURE: This environment uses SQLite, which stores the
+#    entire database as a single file (MasterData.db). There is no need for 
+#    external servers, making your research "Sovereign" and portable.
+#
+# 2. MASTER KEYS (RIC/SEDOL): We use the RIC as a PRIMARY KEY in the Registry 
+#    and a FOREIGN KEY in all other tables. This ensures that a P/E ratio or 
+#    a CapEx figure can only exist if the company is first officially registered.
+#
+# 3. RELATIONAL INTEGRITY: By separating data into "Silos" (Fundamentals vs. 
+#    Cash Flow), we avoid data redundancy and allow for faster, more 
+#    precise queries when comparing peer groups or historical performance.
+#
+# 4. CLEAN DATA PROTOCOL: Ensure that RIC codes (e.g., 'SONY.T') are stripped of 
+#    leading or trailing whitespace before being passed to the database. 
+#    Inconsistent formatting is the primary cause of "Ghost Data" errors.
+#
+# 5. SCALE & FLEXIBILITY: This schema is modular. If your research expands 
+#    to include ESG or Governance metrics, you can add a new table using 
+#    the same RIC key without disrupting the existing infrastructure.
+# ---------------------------------------------------------
