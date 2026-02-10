@@ -1,0 +1,39 @@
+Environment & Setup: The Conda Guide
+
+To ensure your research engine runs predictably, you must isolate your workspace. Think of a Virtual Environment as a sealed clean room where you define exactly which tools are on the shelves .
+
+Step 1: Install your Distributor
+Before creating an environment, you need a distribution manager.
+
+Anaconda: The "landlord" of your building. It comes pre-packaged with a vast library of data science tools.
+
+Miniforge/Miniconda: A lighter, "bare-bones" version for those who want to save disk space and system resources.
+
+Step 2: Create the "Workshop"
+Open your terminal (or Anaconda Prompt) and run the following command to create a clean, isolated room. We recommend using Python 3.11 or 3.12 for maximum compatibility with modern LLM libraries.
+
+Bash
+# Create an environment named 'fortress'
+conda create -n fortress python=3.11
+
+Step 3: Activate the Environment
+You must "enter" the room before you can start working.
+
+Bash
+conda activate fortress
+Step 4: Install the Essentials
+Once inside, use pip to install the core "toolbox" required for this repository.
+
+Bash
+pip install pandas streamlit openai tavily-python python-dotenv
+
+The Setup Hierarchy
+Always remember the "Workforce Hierarchy" to prevent library conflicts :
+
+Distributor: Anaconda (The Landlord).
+
+Environment: Your 'fortress' workshop (The Locked Room).
+
+Interface: VS Code or Jupyter (The Workbench).
+
+Pro-Tip: Always launch your code editor (like VS Code) from within the activated environment to ensure the scripts "see" the libraries you've installed.
