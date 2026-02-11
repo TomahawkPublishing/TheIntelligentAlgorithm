@@ -83,7 +83,7 @@ if __name__ == "__main__":
 #    Cash Flow), we avoid data redundancy and allow for faster, more 
 #    precise queries when comparing peer groups or historical performance.
 #
-# 4. CLEAN DATA PROTOCOL: Ensure that RIC codes (e.g., 'SONY.T') are stripped of 
+# 4. CLEAN DATA PROTOCOL: Ensure that RIC codes (e.g., 'MSFT.O') are stripped of 
 #    leading or trailing whitespace before being passed to the database. 
 #    Inconsistent formatting is the primary cause of "Ghost Data" errors.
 #
