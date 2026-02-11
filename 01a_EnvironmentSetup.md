@@ -18,13 +18,15 @@ Create an environment named 'fortress'
 
 ```bash
 conda create -n fortress python=3.11
+```
 
 **Step 3: Activate the Environment**
 
 You must "enter" the room before you can begin your research or run any scripts .
 
 ```bash
-conda activate fortress*
+conda activate fortress
+```
 
 **Step 4: Install the Essentials**
 
@@ -32,6 +34,7 @@ Once inside, use the provided requirements.txt to install the complete "toolbox"
 
 ```bash
 pip install -r requirements.txt
+```
 
 **The Setup Hierarchy**
 
