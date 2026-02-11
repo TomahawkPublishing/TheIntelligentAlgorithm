@@ -1,4 +1,4 @@
-**🏗️ Environment & Setup: The Conda Guide**
+## 🏗️ Environment & Setup: The Conda Guide
 
 To ensure your research engine runs predictably, you must isolate your workspace. Think of a Virtual Environment as a sealed "clean room" where you define exactly which tools are on the shelves to prevent "Dependency Hell" and library conflicts.
 
