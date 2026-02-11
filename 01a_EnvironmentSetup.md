@@ -16,19 +16,22 @@ Open your terminal (or Anaconda Prompt) to create your isolated room. We recomme
 
 Create an environment named 'fortress'
 
-Bash: *conda create -n fortress python=3.11*
+```bash
+conda create -n fortress python=3.11
 
 **Step 3: Activate the Environment**
 
 You must "enter" the room before you can begin your research or run any scripts .
 
-Bash: *conda activate fortress*
+```bash
+conda activate fortress*
 
 **Step 4: Install the Essentials**
 
 Once inside, use the provided requirements.txt to install the complete "toolbox" required for this repository in one go.
 
-Bash: *pip install -r requirements.txt*
+```bash
+pip install -r requirements.txt
 
 **The Setup Hierarchy**
 
