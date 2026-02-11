@@ -1,6 +1,6 @@
 ## 🗄️ Data & Logic: Sample Database Schema
 
-This schema is designed for a relational research environment (e.g., **SQLite** or **PostgreSQL**). By using **RICs (Reuters Instrument Codes)** or **SEDOLs** as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic.
+This schema is designed for a relational research environment (e.g., **SQLite** or **PostgreSQL**). By using **RICs (Reuters Instrument Codes)** or **SEDOLs** as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic. 
 
 ---
 
@@ -63,3 +63,6 @@ The *Truth Layer* for analyzing quality of earnings.
 
 **📘 Strategic Guidelines for Database Management**
 The Power of the Foreign Key: By using the RIC across all tables, you can write a single SQL query to pull a company's P/E Ratio alongside its Free Cash Flow for the last five years instantly.
+
+
+Pro Tip: The database schema can contain hundreds of datapoints, so creating a naming convention for metrics that can be easily remembered is essential for ease of use in your code blocks. For example, for inventory and receivables data over time use a convention like INV2025, INV2024, REC2025, REC2024 etc.  
