@@ -28,6 +28,7 @@ The analysis must be delivered in the following modular format:
 
 **INPUT DATA**
 [PASTE YOUR AGGREGATED RESEARCH OR LSEG DATA HERE]
+
 📘 Strategic Guidelines for Implementation
 
 By using this generic framework, you provide the "Skeletal Logic" of your book while keeping your specific investment "Fortress" secure.
