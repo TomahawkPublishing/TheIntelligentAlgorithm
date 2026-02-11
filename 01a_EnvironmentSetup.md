@@ -1,12 +1,12 @@
 ## 🏗️ Environment & Setup: The Conda Guide
 
-To ensure your research engine runs predictably, you must isolate your workspace. Think of a Virtual Environment as a sealed "clean room" where you define exactly which tools are on the shelves to prevent "Dependency Hell" and library conflicts.
+To ensure your research engine runs predictably, you must isolate your workspace. Think of a Virtual Environment as a sealed *clean room* where you define exactly which tools are on the shelves to prevent *Dependency Hell* and library conflicts.
 
 **Step 1: Install your Distributor**
 
-- Before creating an environment, you need a distribution manager to act as the "landlord" of your building.
-- Anaconda: The full-featured "landlord." It comes pre-packaged with an extensive library of data science tools.\
-- Miniforge/Miniconda: A lighter, "bare-bones" version for those looking to save disk space and system resources.
+- Before creating an environment, you need a distribution manager to act as the *landlord* of your building.
+- Anaconda: The full-featured *landlord.* It comes pre-packaged with an extensive library of data science tools.
+- Miniforge/Miniconda: A lighter, *bare-bones* version for those looking to save disk space and system resources.
 
 **Step 2: Create the "Workshop"**
 
@@ -28,7 +28,7 @@ conda activate fortress
 
 **Step 4: Install the Essentials**
 
-Once inside, use the provided requirements.txt to install the complete "toolbox" required for this repository in one go.
+Once inside, use the provided ```requirements.txt``` to install the complete "toolbox" required for this repository in one go.
 
 ```bash
 pip install -r requirements.txt
@@ -36,10 +36,10 @@ pip install -r requirements.txt
 
 **The Setup Hierarchy**
 
-To maintain a stable development environment, always follow this "Workforce Hierarchy":
+To maintain a stable development environment, always follow this Workforce Hierarchy:
 
-- Distributor: Anaconda (The Landlord).
-- Environment: Your fortress workshop (The Locked Room).
-- Interface: VS Code or Jupyter (The Workbench).
+- Distributor: Anaconda *(The Landlord)*.
+- Environment: Your fortress workshop *(The Locked Room)*.
+- Interface: VS Code or Jupyter *(The Workbench)*.
 
-**💡 Pro-Tip:** Always launch your code editor (like VS Code) from within the activated environment in your terminal. This ensures your workbench "sees" and uses the specific tools you have installed for this project.
+**💡 Pro-Tip:** Always launch your code editor (like VS Code) from within the activated environment in your terminal. This ensures your workbench sees and uses the specific tools you have installed for this project.
