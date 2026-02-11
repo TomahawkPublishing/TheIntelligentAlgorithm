@@ -69,7 +69,7 @@ __pycache__/
 .DS_Store
 ```
 
-## ⚠️ Disclaimer & Institutional Notice
+## ⚠️ Disclaimer & Usage
 
 ### 1. For Educational and Research Purposes Only
 The code and logic contained in this repository are provided as a **skeletal proof-of-concept**. This environment is intentionally *open* to facilitate learning and **lacks the enterprise-grade error handling, multi-layer encryption, and systemic fail-safes** required for a production-level institutional environment. Use in a live trading or production setting is strictly at the user's own risk.
