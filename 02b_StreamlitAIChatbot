@@ -4,7 +4,7 @@ from tavily import TavilyClient
 import os
 
 # 1. PAGE CONFIGURATION
-st.set_page_config(page_title="Fortress AI Chatbot", page_icon="🤖")
+st.set_page_config(page_title="AI Chatbot", page_icon="🤖")
 
 # 2. KEY LOADING
 def load_key(file_path):
@@ -26,8 +26,8 @@ else:
     st.stop()
 
 # 4. THE INTERFACE
-st.title("🤖 Fortress Research Chatbot")
-st.info("Ask about markets, companies, or trends (e.g., 'What is the latest news on Sony Corp?')")
+st.title("🤖 AI Research Chatbot")
+st.info("Ask about markets, companies, or trends (e.g., 'What is the latest news on Microsoft?')")
 
 # 5. INITIAL USER INPUT (TOP OF PAGE)
 user_query = st.text_input("What would you like to research?", key="initial_query")
@@ -75,7 +75,7 @@ st.sidebar.warning("API keys are loaded locally. Do not commit keys to GitHub.")
 # streamlit run ai_chatbot.py
 
 # Why This Matters
-# Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Sony Corp's latest quarterly earnings or recent product announcements, before formulating a response.
+# Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Microsoft's latest quarterly earnings or recent product announcements, before formulating a response.
 # The "Private Fortress" Logic: This script runs on your localhost. While the query goes to the cloud, the orchestration and the logic are managed on your own machine .Instructions for Setup
 # To ensure this app functions as intended, follow these configuration steps:
 
@@ -90,6 +90,6 @@ st.sidebar.warning("API keys are loaded locally. Do not commit keys to GitHub.")
 # conda activate fortress
 # streamlit run ai_chatbot.py
 # Why This Matters
-# Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Sony Corp's latest quarterly earnings or recent product announcements, before formulating a response.
+# Real-Time Context: Traditional LLMs have a "knowledge cutoff." By integrating Tavily, your chatbot can research current events, such as Microsoft's latest quarterly earnings or recent product announcements, before formulating a response.
 # The "Private Fortress" Logic: This script runs on your localhost. While the query goes to the cloud, the orchestration and the logic are managed on your own machine.
 #-----------------------------------------------------------------------------------------------------------
