@@ -62,6 +62,7 @@ While a one-line install is efficient for a quick setup, maintaining a ```requir
 - Automation: It allows for a clean, one-command environment build: pip install -r requirements.txt. This industrializes the setup process, moving away from manual, error-prone terminal entries.
 
 **🏗️ One-Line Installation (Alternative)**
+
 If you prefer to install all dependencies manually in a single step, run the following command in your terminal:
 
 ```bash
