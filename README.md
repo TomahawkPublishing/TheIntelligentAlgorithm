@@ -50,7 +50,7 @@ To visualize how these components interact within your *Fortress*, consider this
 This toolkit is designed for **Local Deployment**. The Streamlit applications are intended to run on your own machine (localhost) to ensure that your proprietary research data and API keys never leave your controlled environment.
 
 ### GitHub & Git Hygiene
-If you use GitHub to track your progress, you must protect your "Fortress" by using a `.gitignore` file. This prevents sensitive files from being uploaded to the public web. 
+If you use GitHub to track your progress, you must protect your *Fortress* by using a `.gitignore` file. This prevents sensitive files from being uploaded to the public web. 
 
 **Essential .gitignore Rules:**
 Create a file named `.gitignore` in your root directory and add the following lines:
