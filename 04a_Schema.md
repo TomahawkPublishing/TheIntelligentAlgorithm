@@ -2,8 +2,6 @@
 
 This schema is designed for a relational research environment (e.g., **SQLite** or **PostgreSQL**). By using **RICs (Reuters Instrument Codes)** or **SEDOLs** as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic. 
 
-This schema is designed for a relational research environment (e.g., SQLite or PostgreSQL). By using RICs (Reuters Instrument Codes) or SEDOLs as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic.
-
 **📘 Understanding Data Types**
 In a structured database, every column is assigned a Data Type to ensure computational accuracy and memory efficiency.
 
