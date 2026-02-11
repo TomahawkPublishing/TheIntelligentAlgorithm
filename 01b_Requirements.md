@@ -6,39 +6,39 @@ Copy and save the library names as a long list in Notepad and save the file as `
 
 **Core UI & Visualization**
 
-streamlit 
+```streamlit 
 plotly 
 matplotlib 
-kaleido
+kaleido```
 
 **Data Engine & Storage**
 
-pandas 
+```pandas 
 numpy 
-sqlite3
+sqlite3```
 
 **Institutional Connectivity**
 
-refinitiv-data 
-lseg.data
+```refinitiv-data 
+lseg.data```
 
 **Intelligence & Search**
 
-openai 
+```openai 
 tavily-python 
-json_repair
+json_repair```
 
 **Document Processing**
 
-pypdf 
+```pypdf 
 pypdf2 
 python-docx 
-markdown
+markdown```
 
 **System & Security**
 
-python-dotenv 
-pycryptodome
+```python-dotenv 
+pycryptodome```
 
 Once you have followed the steps in our [Setup Guide](./SETUP.md) open you terminal in the Code Editor (IDE) and run the following:
 
