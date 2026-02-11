@@ -46,7 +46,7 @@ Once you have followed the steps in our [Setup Guide](./SETUP.md) open you termi
 pip install -r requirements.txt
 ```
 
-## 📘 Why a requirements.txt is the "Institutional" Choice
+## 📘 Why a Requirements File is Preferred
 
 While a one-line install is efficient for a quick setup, maintaining a requirements.txt file is the preferred standard for building a Sovereign Fortress for three key reasons:
 
