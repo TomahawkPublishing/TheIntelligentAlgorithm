@@ -16,14 +16,14 @@ Open your terminal (or Anaconda Prompt) to create your isolated room. We recomme
 
 Bash
 Create an environment named 'fortress'
-conda create -n fortress python=3.11
+*conda create -n fortress python=3.11*
 
 **Step 3: Activate the Environment**
 
 You must "enter" the room before you can begin your research or run any scripts .
 
 Bash
-conda activate fortress
+*conda activate fortress*
 
 **Step 4: Install the Essentials**
 
