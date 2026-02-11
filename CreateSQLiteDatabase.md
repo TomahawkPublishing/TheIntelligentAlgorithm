@@ -1,4 +1,4 @@
-##📘 Guide: Creating your SQLite Database
+## 📘 Guide: Creating your SQLite Database
 
 Since SQLite is "serverless," the database is simply a file on your machine. However, the file must be initialized with your specific table structures before the script above can read it.
 
@@ -9,10 +9,9 @@ Find a sample script [here](./DatabaseIntializer).
 **Option B: Using a GUI (DB Browser for SQLite)**
 Download DB Browser for SQLite (standard tool for researchers).
 
-Click New Database and save it as MasterData.db.
+- Click New Database and save it as MasterData.db.
+- Go to the Execute SQL tab.
+- Paste the CREATE TABLE commands from your Schema Markdown.
+- Click Execute.
 
-Go to the Execute SQL tab.
-
-Paste the CREATE TABLE commands from your Schema Markdown.
-
-Click Execute.
+You can find more useful information here https://sqlite.org/ 
