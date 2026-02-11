@@ -4,7 +4,7 @@ Since SQLite is "serverless," the database is simply a file on your machine. How
 
 **Option A: Using Python to initialize (Recommended)**
 You can create a separate "Setup" script (e.g., init_db.py) that runs the CREATE TABLE commands. This ensures your "Fortress" can be rebuilt instantly on any new machine.
-Find a sample script [here](./DatabaseInitializer).
+Find a sample script [here](./04c_DatabaseInitializer).
 
 **Option B: Using a GUI (DB Browser for SQLite)**
 Download DB Browser for SQLite (standard tool for researchers).
