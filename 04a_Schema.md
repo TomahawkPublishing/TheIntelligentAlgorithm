@@ -2,6 +2,17 @@
 
 This schema is designed for a relational research environment (e.g., **SQLite** or **PostgreSQL**). By using **RICs (Reuters Instrument Codes)** or **SEDOLs** as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic. 
 
+This schema is designed for a relational research environment (e.g., SQLite or PostgreSQL). By using RICs (Reuters Instrument Codes) or SEDOLs as Primary Keys, we ensure that data from institutional providers like LSEG remains synchronized with our internal logic.
+
+**📘 Understanding Data Types**
+In a structured database, every column is assigned a Data Type to ensure computational accuracy and memory efficiency.
+
+- VARCHAR / TEXT: Used for alphanumeric strings (names, RICs).
+- INTEGER: Used for whole numbers (years).
+- BIGINT: Used for very large whole numbers (multi-billion dollar revenues) to prevent overflow errors.
+- FLOAT / REAL: Used for numbers with decimal points (ratios like P/E).
+- DATE: Specifically formatted for time-series consistency.
+
 ---
 
 ### **1. The Master Registry**
