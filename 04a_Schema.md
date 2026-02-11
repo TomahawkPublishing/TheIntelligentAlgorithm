@@ -5,7 +5,7 @@ This schema is designed for a relational research environment (e.g., **SQLite** 
 ---
 
 ### **1. The Master Registry**
-*The "Source of Truth" for your investment universe metadata.*
+The *Source of Truth* for your investment universe metadata.
 
 | Column | Type | Description |
 | :--- | :--- | :--- |
@@ -18,7 +18,7 @@ This schema is designed for a relational research environment (e.g., **SQLite** 
 ---
 
 ### **2. Fundamentals Table (`fact_fundamentals`)**
-*Stores the high-level valuation snapshots used for screening.*
+Stores the high-level valuation snapshots used for screening.
 
 | Column | Type | Description |
 | :--- | :--- | :--- |
@@ -32,7 +32,7 @@ This schema is designed for a relational research environment (e.g., **SQLite** 
 ---
 
 ### **3. Income Statement Table (`fact_income_statement`)**
-*Time-series data for historical profitability analysis.*
+Time-series data for historical profitability analysis.
 
 | Column | Type | Description |
 | :--- | :--- | :--- |
@@ -45,7 +45,7 @@ This schema is designed for a relational research environment (e.g., **SQLite** 
 ---
 
 ### **4. Cash Flow Table (`fact_cash_flow`)**
-*The "Truth Layer" for analyzing quality of earnings.*
+The *Truth Layer* for analyzing quality of earnings.
 
 | Column | Type | Description |
 | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ This schema is designed for a relational research environment (e.g., **SQLite** 
 ---
 
 ### 📘 Implementation Notes
-* **Normalization:** By separating Income Statement and Cash Flow items into distinct tables, we prevent "Wide Table Syndrome," making it easier to add new line items in the future without breaking existing queries.
+* **Normalization:** By separating Income Statement and Cash Flow items into distinct tables, we prevent *Wide Table Syndrome,* making it easier to add new line items in the future without breaking existing queries.
 * **Master Keys:** Always clean your `RIC` and `SEDOL` strings (strip whitespace) before insertion to ensure the relational joins function correctly.
 
 **📘 Strategic Guidelines for Database Management**
