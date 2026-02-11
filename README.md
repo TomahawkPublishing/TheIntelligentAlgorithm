@@ -4,23 +4,24 @@ This repository provides a modular toolkit to support the text of the book publi
 
 ## ⚖️ Conceptual Framework
 This toolkit is built upon the **Four Laws** established in the book:
-1. **Sovereign Fortress:** Run your logic on your own silicon to protect your IP.
-2. **Industrialized Curiosity:** Automate data retrieval to focus on deep reasoning.
-3. **Reasoning over Prediction:** Use LLMs as logic engines, not crystal balls.
-4. **Probabilistic Mindset:** Structure data to survive uncertainty, not just predict outcomes.
 
-1. Environment & Setup
+- **Sovereign Fortress:** Run your logic on your own silicon to protect your IP.
+- **Industrialized Curiosity:** Automate data retrieval to focus on deep reasoning.
+- **Reasoning over Prediction:** Use LLMs as logic engines, not crystal balls.
+- **Probabilistic Mindset:** Structure data to survive uncertainty, not just predict outcomes.
+
+**1. Environment & Setup**
 Conda/Anaconda Guide: Step-by-step instructions for creating isolated Python virtual environments to prevent library conflicts. For detailed environment instructions, see our [Setup Guide](./01a_EnvironmentSetup.md)
 Library Management: A requirements.txt file and guide for installing essential financial and AI libraries (Pandas, Streamlit, OpenAI, etc.) [Requirements](./01b_Requirements.md).
 
-2. Web Applications & UI
+**2. Web Applications & UI**
 Sydney Weather App: A simple Streamlit application to get you up and running with your very own localhost server [Weather](./02a_StreamlitWeatherApp).
 A simple AI chatbot in Streamlit connected to OpenAI and Tavily (you will need your own API Keys) [Chatbot](./02b_StreamlitAIChatbot).
 
-3. API Integrations & Connectivity
+**3. API Integrations & Connectivity**
 LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental data, such as a trailing P/E Ratio, directly into your Streamlit environment. Check [LSEG Snapshot](./03_LSEGSnapshot) for more information. You will need your own API key.
 
-4. Data & Logic
+**4. Data & Logic**
 Database Schema: A sample schema for organizing your data for high-speed querying. Find the basic guidelines [here](./04a_Schema.md).
 In addition, there are some basic instructions for setting up an [SQLite](./04b_CreateSQLiteDatabase.md) database using this schema and is some sample [script](./04c_DatabaseInitializer) showing how to retrieve data from it.  
 
@@ -47,9 +48,10 @@ venv/
 __pycache__/
 .DS_Store
 
-5. A The Dummy AI Prompt: A sample financial analysis prompt designed to demonstrate **Constraint-based** prompt engineering. Tailor as you will. [Dummy Prompt](./05_DummyPrompt.md).
+**5. A The Dummy AI Prompt:**
+A sample financial analysis prompt designed to demonstrate **Constraint-based** prompt engineering. Tailor as you will. [Dummy Prompt](./05_DummyPrompt.md).
 
-⚠️ Disclaimer & Usage
+## ⚠️ Disclaimer & Usage: 
 
 For Educational Use Only The code provided here is a skeletal framework. It is intentionally basic and lacks the robust error-handling, encryption, and "fail-safes" required for a production-level institutional environment.
 
