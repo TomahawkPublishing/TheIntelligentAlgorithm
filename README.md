@@ -28,20 +28,23 @@ LSEG (Refinitiv) Integration: Sample code to authenticate and pull fundamental d
 Database Schema: A sample schema for organizing your data for high-speed querying. Find the basic guidelines [here](./04a_Schema.md).
 In addition, there are some basic instructions for setting up an [SQLite](./04b_CreateSQLiteDatabase.md) database using this schema and is some sample [script](./04c_DatabaseInitializer) showing how to retrieve data from it.  
 
-**5. A The Dummy AI Prompt:**
+**5. The Dummy AI Prompt**
 
 A sample financial analysis prompt designed to demonstrate **Constraint-based** prompt engineering. Tailor as you will. [Dummy Prompt](./05_DummyPrompt.md).
 
+---
+
+## 🏗️ The Repository Architecture
+To visualize how these components interact within your *Fortress*, consider this mental model:
+
+* **The Foundation (Registry/DB):** Your `MasterData.db` acts as the persistent memory, ensuring data sovereignty.
+* **The Windows (API/Connectivity):** LSEG, OpenAI, and Tavily provide the external views and raw materials for your analysis.
+* **The Front Door (Streamlit UI):** The interface where you interact with your data and AI logic in a secure, local environment.
+* **The Engine (The Prompt):** The internal logic and "Intelligent Algorithm" that directs the AI's reasoning.
+
 *Good luck :)* 
 
-## ⚠️ Disclaimer & Usage
-
-For Educational Use Only The code provided here is a skeletal framework. It is intentionally basic and lacks the robust error-handling, encryption, and "fail-safes" required for a production-level institutional environment.
-
-Not Financial Advice: This repository does not provide investment recommendations. The "Intelligent Algorithm" is designed to assist in human reasoning and probabilistic thinking; it is not a "black box" for generating trades.
-
-API Responsibility Users are responsible for their own API keys and any costs incurred through LSEG, OpenAI, or Tavily. Never commit your .env files or raw API keys to a public repository.
-
+---
 ## 🚀 Deployment & Security
 ### Local-First Architecture
 This toolkit is designed for **Local Deployment**. The Streamlit applications are intended to run on your own machine (localhost) to ensure that your proprietary research data and API keys never leave your controlled environment.
@@ -64,5 +67,26 @@ Create a file named `.gitignore` in your root directory and add the following li
 venv/
 __pycache__/
 .DS_Store
+```
+
+## ⚠️ Disclaimer & Institutional Notice
+
+### 1. For Educational and Research Purposes Only
+The code and logic contained in this repository are provided as a **skeletal proof-of-concept**. This environment is intentionally *open* to facilitate learning and **lacks the enterprise-grade error handling, multi-layer encryption, and systemic fail-safes** required for a production-level institutional environment. Use in a live trading or production setting is strictly at the user's own risk.
+
+### 2. No Investment Advice
+This repository and its associated book, *The Intelligent Algorithm*, do not constitute financial, investment, or legal advice. 
+* **Not a Black Box:** The tools provided are designed to augment human reasoning and facilitate **probabilistic thinking**; they are not an automated system for generating trade signals or financial recommendations.
+* **Independent Diligence:** Users must perform their own independent research and consult with qualified professionals before making any investment decisions.
+
+### 3. Security & API Responsibility
+Users maintain **total sovereignty** and responsibility over their local environment:
+* **Cost Management:** You are solely responsible for any costs incurred via third-party APIs (LSEG, OpenAI, Tavily, etc.).
+* **Credential Security:** You are responsible for the encryption and storage of your API keys. **NEVER** commit `.env` files, `.txt` keys, or database files to a public repository. 
+* **Data Privacy:** This toolkit is designed for local execution. Deploying these applications to the cloud may expose your proprietary research and sensitive keys; do so only with a full understanding of the security implications.
+
+### 4. Limitation of Liability
+The author and contributors shall not be held liable for any financial losses, data breaches, or system failures resulting from the use or modification of this code.
+
 
 
