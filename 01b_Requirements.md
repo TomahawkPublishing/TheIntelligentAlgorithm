@@ -42,7 +42,6 @@ pycryptodome
 
 Once you have followed the steps in our [Setup Guide](./SETUP.md) open you terminal in the Code Editor (IDE) and run the following:
 
-Bash
-pip install -r requirements.txt
+Bash: *pip install -r requirements.txt*
 
 💡 Pro-Tip: Always launch your Integrated Development Environment (IDE), such as VS Code, from within this activated terminal. This ensures your workbench has direct access to the specific tools and libraries you just installed.
