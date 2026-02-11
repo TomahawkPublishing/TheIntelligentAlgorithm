@@ -14,8 +14,10 @@ Miniforge/Miniconda: A lighter, "bare-bones" version for those looking to save d
 
 Open your terminal (or Anaconda Prompt) to create your isolated room. We recommend using Python 3.11 for maximum compatibility with institutional financial APIs and modern LLM libraries.
 
-Bash
 Create an environment named 'fortress'
+
+Bash
+
 *conda create -n fortress python=3.11*
 
 **Step 3: Activate the Environment**
@@ -30,7 +32,8 @@ Bash
 Once inside, use the provided requirements.txt to install the complete "toolbox" required for this repository in one go.
 
 Bash
-pip install -r requirements.txt
+
+*pip install -r requirements.txt*
 
 **The Setup Hierarchy**
 
