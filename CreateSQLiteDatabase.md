@@ -1,4 +1,5 @@
-###📘 Guide: Creating your SQLite Database
+##📘 Guide: Creating your SQLite Database
+
 Since SQLite is "serverless," the database is simply a file on your machine. However, the file must be initialized with your specific table structures before the script above can read it.
 
 **Option A: Using Python to initialize (Recommended)**
