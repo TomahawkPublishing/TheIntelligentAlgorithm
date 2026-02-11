@@ -4,7 +4,6 @@ This template demonstrates Constraint-Based Prompt Engineering.
 The Meta-Template
 Use this structure as a baseline. The variables in brackets [ ] should be tailored to your specific investment philosophy.
 
-Markdown
 **THE ANALYTICAL PERSONA**
 Act as an [INDUSTRY ROLE] tasked with performing a [TYPE OF ANALYSIS]. 
 Your objective is to provide a neutral, probabilistic assessment of 
