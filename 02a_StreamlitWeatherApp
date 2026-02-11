@@ -9,7 +9,7 @@ st.set_page_config(page_title="Sydney Weather Tool", page_icon="☀️")
 
 # 2. THE HEADER
 # Standard markdown used to create an elegant title for your local server.
-st.title("🏙️ Sydney Research Fortress: Weather Tool")
+st.title("🏙️ Sydney Weather App")
 st.markdown("---")
 
 # 3. DATA ACQUISITION (THE "WAITER")
