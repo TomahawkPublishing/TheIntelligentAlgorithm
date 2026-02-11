@@ -1,6 +1,6 @@
 ## 📄 The Requirements File 
 
-Note: The libraries listed below are recommendations of those we found useful in core architecture. 
+**Note: The libraries listed below are recommendations of those we found useful in core architecture.**
 
 Copy and save the library names as a long list in Notepad and save the file as ```requirements.txt``` in your repository’s root directory:
 
