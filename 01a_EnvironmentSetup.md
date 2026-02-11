@@ -36,10 +36,8 @@ pip install -r requirements.txt
 
 To maintain a stable development environment, always follow this "Workforce Hierarchy":
 
-Distributor: Anaconda (The Landlord).
-
-Environment: Your fortress workshop (The Locked Room).
-
-Interface: VS Code or Jupyter (The Workbench).
+- Distributor: Anaconda (The Landlord).
+- Environment: Your fortress workshop (The Locked Room).
+- Interface: VS Code or Jupyter (The Workbench).
 
 **💡 Pro-Tip:** Always launch your code editor (like VS Code) from within the activated environment in your terminal. This ensures your workbench "sees" and uses the specific tools you have installed for this project.
