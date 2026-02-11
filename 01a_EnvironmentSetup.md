@@ -28,7 +28,8 @@ conda activate fortress
 
 **Step 4: Install the Essentials**
 
-Once inside, use the provided ```requirements.txt``` to install the complete "toolbox" required for this repository in one go.
+Once inside, use the provided ```requirements.txt``` to install the complete "toolbox" required for this repository in one go. More information on setting up your file can be found [Here](./01b_Requirements.md).
+
 
 ```bash
 pip install -r requirements.txt
