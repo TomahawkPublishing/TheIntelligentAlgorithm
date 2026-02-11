@@ -4,11 +4,9 @@ To ensure your research engine runs predictably, you must isolate your workspace
 
 **Step 1: Install your Distributor**
 
-Before creating an environment, you need a distribution manager to act as the "landlord" of your building.
-
-Anaconda: The full-featured "landlord." It comes pre-packaged with an extensive library of data science tools.
-
-Miniforge/Miniconda: A lighter, "bare-bones" version for those looking to save disk space and system resources.
+- Before creating an environment, you need a distribution manager to act as the "landlord" of your building.
+- Anaconda: The full-featured "landlord." It comes pre-packaged with an extensive library of data science tools.\
+- Miniforge/Miniconda: A lighter, "bare-bones" version for those looking to save disk space and system resources.
 
 **Step 2: Create the "Workshop"**
 
