@@ -2,7 +2,7 @@
 
 Note: The libraries listed below are recommendations of those we found useful in core architecture. 
 
-Copy and save the library names as a long list in Notepad and save the file as "requirements.txt" in your repository’s root directory:
+Copy and save the library names as a long list in Notepad and save the file as ```requirements.txt``` in your repository’s root directory:
 
 **Core UI & Visualization**
 
@@ -50,8 +50,9 @@ pip install -r requirements.txt
 
 While a one-line install is efficient for a quick setup, maintaining a ```requirements.txt``` file is the preferred standard for building a Sovereign Fortress for three key reasons:
 
--Version Pinning: A requirements.txt allows you to lock specific versions (e.g., pandas==2.1.0). This prevents your "Intelligent Algorithm" from breaking when a library releases a new version that is incompatible with your current code.
--Reproducibility: It ensures that if you move your research to a new machine—or if a reader of your book wants to follow along—everyone is using the exact same software environment, eliminating the "it works on my machine" problem.
+
+- Version Pinning: A requirements.txt allows you to lock specific versions (e.g., pandas==2.1.0). This prevents your "Intelligent Algorithm" from breaking when a library releases a new version that is incompatible with your current code.
+- Reproducibility: It ensures that if you move your research to a new machine—or if a reader of your book wants to follow along—everyone is using the exact same software environment, eliminating the "it works on my machine" problem.
 - Automation: It allows for a clean, one-command environment build: pip install -r requirements.txt. This industrializes the setup process, moving away from manual, error-prone terminal entries.
 
 **🏗️ One-Line Installation (Alternative)**
